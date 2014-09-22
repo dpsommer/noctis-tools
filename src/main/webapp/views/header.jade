@@ -1,0 +1,5 @@
+.header(ng-controller='HeaderCtrl')
+  div(ng-if='sessionToken == null')
+    include login-panel
+  div(ng-if='sessionToken != null')
+    include user-panel

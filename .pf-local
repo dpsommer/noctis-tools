@@ -1,0 +1,1 @@
+web: java -cp .;.\target\classes;.\target\dependencies\* com.noctis.tools.core.App

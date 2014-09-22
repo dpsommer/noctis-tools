@@ -1,0 +1,299 @@
+/* ================================================================== */
+/* Global styles */
+/* ================================================================== */
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	padding: 0 15% 0 15%;
+	font-family: Calibri, sans-serif !important;
+	background-image: url('/img/bg.jpg');
+	background-repeat: no-repeat;
+}
+
+p {
+	font-size: 1.2em;
+	margin: 0 !important;
+}
+
+.header {
+	color: white;
+	width: 100%;
+	height:225px;
+}
+
+.wrapper {
+	background-image: url('/img/banner.png');
+	background-repeat: no-repeat;
+	min-height: 100%;
+	height: 100%;
+	margin: 0 auto -3.5em;
+ min-width: 60em;
+}
+
+/* Needed for footer alignment */
+.push {
+	height: 2em;
+}
+
+.footer {
+	background-color: white;
+	text-align: center;
+	height: 2.15em;
+	padding: 1em 1em .325em 1em;
+	text-align: center;
+	overflow: hidden;
+ min-width: 58em;
+}
+
+a {
+	cursor: pointer;
+}
+
+form {
+	margin: 0 !important;
+}
+
+/* ================================================================== */
+/* Navigation styles */
+/* ================================================================== */
+.nav-tabs {
+ border-bottom-color: white !important;
+	margin-bottom: 0 !important;
+	padding-bottom: .1em;
+}
+
+.nav-tabs a {
+ background-color: #ddd;
+}
+
+.nav-tab {
+	width: 2em;
+	height: 2em;
+	padding: 0 1.5em 0 1.5em !important;
+}
+
+/* ================================================================== */
+/* Map Styles */
+/* ================================================================== */
+#map-container {
+	position: relative;
+	float: right;
+	width: 98%;
+	margin: 5px 5px 5px 0;
+ border: 4px solid #fff;
+ -moz-box-shadow: 0 0 10px -1px #333;
+ -webkit-box-shadow: 0 0 10px -1px #333;
+ box-shadow: 0 0 10px -1px #333;
+ overflow: hidden;
+}
+
+#aa-map {
+ position: relative;
+	background: #edeebb;
+ height: 550px;
+}
+
+#map-markers {
+	position: absolute;
+ background-image: url(https://s3.amazonaws.com/noctis-tools-assets/img/map/icons/scroll.png);
+ background-repeat: no-repeat;
+ width: 48px;
+ height: 500px;
+	z-index: 1001;
+	top: .5em;
+ right: .5em;
+}
+
+#map-markers img {
+	padding: .6em 0 0 .6em;
+	cursor: pointer;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#map-sidebar {
+	position: absolute;
+	bottom: .5em;
+	left: .5em;
+	width: 15%;
+	min-width: 175px;
+ z-index: 1001;
+}
+
+/* ================================================================== */
+/* Tab Styles
+/* ================================================================== */
+.tab-content {
+	background-color: white;
+	color: black;
+	padding: 1em;
+	height: 100%;
+}
+
+.tab-pane {
+	width: 100%;
+	overflow: auto;
+}
+
+/* ================================================================== */
+/* Content styles */
+/* ================================================================== */
+#selection-heading {
+	padding-top: 1em;
+}
+
+.btn-inline {
+	float: right;
+	margin-left: 1em !important;
+}
+
+.switch-text {
+	padding-top: 1em;
+}
+
+.text-fade {
+	padding-left: 1em;
+	float: right;
+}
+
+#username {
+	float: left;
+	padding: 0.25em 1em 0 0;
+}
+
+#plantables {
+ text-transform:capitalize;
+}
+
+#request-panel {
+	float: left;
+ min-width: 250px;
+ width: 25%;
+	overflow: auto;
+}
+
+#guild-requests {
+	padding-top: 2em;
+}
+
+.request-items {
+	padding-top: .25em;
+	margin: .5em 0 1em 0;
+}
+
+/* ================================================================== */
+/* Panel Styles
+/* ================================================================== */
+.rounded-panel {
+ background-color: white;
+ color: black;
+	float: right;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	padding: 1em;
+	border: 1px solid #ccc !important;
+}
+
+#timer-panel {
+	float: left;
+}
+
+#user-panel, #login-panel {
+	margin: 1em 1em 0 0;
+}
+
+/* ================================================================== */
+/* Input styles */
+/* ================================================================== */
+input[type="text"], input[type="number"], input[type="email"] {
+	margin-top: .5em;
+}
+
+input.medium-box {
+	width: 140px;
+}
+
+input.small-box {
+	width: 3em;
+}
+
+select {
+	width: 150px !important;
+	margin-top: .5em !important;
+	border: 1px solid #ccc !important;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.btn-primary {
+	margin: 0 0 .15em 0;
+	-webkit-border-radius: .275em;
+	-moz-border-radius: .275em;
+	border-radius: .275em;
+}
+
+#logout-btn {
+	float: right;
+}
+
+/* ================================================================== */
+/* Animation styles for angular */
+/* ================================================================== */
+#login-panel.inactive, .visibility-toggle.inactive, .text-fade.inactive {
+	display: none;
+}
+
+.visibility-toggle.active-add, .visibility-toggle.inactive-remove,
+ .text-fade.active-add, .text-fade.inactive-remove,
+	.tab-pane.active-add, .tab-pane.inactive-remove,
+	.text-fade.inactive-add, .text-fade.active-remove {
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	display: block !important;
+}
+
+.visibility-toggle.inactive-add.inactive-add-active, .visibility-toggle.inactive-remove,
+ .text-fade.inactive-add.inactive-add-active, .text-fade.inactive-remove,
+	.tab-pane.inactive-add.inactive-add-active, .tab-pane.inactive-remove {
+	opacity: 0;
+}
+
+.visibility-toggle.inactive-add, .visibility-toggle.inactive-remove.inactive-remove-active,
+ .text-fade.inactive-add, .text-fade.inactive-remove.inactive-remove-active,
+	.tab-pane.inactive-add, .tab-pane.inactive-remove.inactive-remove-active {
+	opacity: 1;
+}
+
+.ng-enter {
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	transition: 0.5s;
+	opacity: 0;
+}
+
+.ng-enter-active {
+	opacity: 1;
+}
+
+.ng-leave {
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.ng-leave-active {
+	opacity: 0;
+}

@@ -1,0 +1,35 @@
+div(ng-controller='FarmCtrl')
+  .rounded-panel(ng-if='timerNotifications.length > 0')
+    .timer(ng-repeat='tn in timerNotifications | orderBy:"timeLeft"')
+      p
+        input.btn-primary(type='button', ng-if='tn.finished', ng-click='removeTimer(tn)', value='X')
+        |  {{tn.count}} {{tn.plantable.name.toLowerCase()}} {{tn.plantable.type.toLowerCase()}}(s) 
+        | will be grown at {{tn.location}}.
+        b
+          span(remaining-time="")
+      p
+        {{tn.comment}}
+  form#timer-panel.rounded-panel(ng-submit='addTimers()')
+    input.btn-primary(type='submit', value='Create')
+    input.btn-primary(type='button', value='+', ng-click='timers.push({})')
+    input.btn-primary(type='button', value='-', ng-click='timers.splice(timers.length - 1, 1)')
+    .batch-entry(ng-repeat='timer in timers')
+      select#plantables(ng-options='plantable.name.toLowerCase().replace("_", " ") group by plantable.type for plantable in plantables', ng-model='timer.plantable', ng-change='uncheck(timer)')
+        option(value='') Type
+      input.medium-box(type='number', ng-model='timer.count', placeholder='Number being grown')
+      br
+      input.medium-box(type='text', ng-model='timer.location', placeholder='Location')
+      input.medium-box(type='text', ng-model='timer.comment', placeholder='Comment')
+      p(ng-if='timer.plantable.type.toUpperCase() === "SEED"')
+        input(type='checkbox', ng-model='timer.watered') 
+        |  Watered
+      p(ng-if='timer.plantable.type.toUpperCase() === "LIVESTOCK"')
+        input(type='checkbox', ng-model='timer.watered') 
+        |  Fed
+      p(ng-if='timer.plantable.climate.toUpperCase() !== "ALL_CLIMATES"')
+        input(type='checkbox', ng-model='timer.optimalClimate') 
+        |  Optimal climate
+      p
+        | {{timer.count}} {{timer.plantable.name.toLowerCase().replace("_", " ")}}
+        | {{(timer.plantable.type.toUpperCase() !== "LIVESTOCK") ? " " + timer.plantable.type.toLowerCase() : ""}}(s) 
+        | will be grown at {{timer.location}}.

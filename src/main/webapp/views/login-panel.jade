@@ -1,0 +1,14 @@
+#login-panel.rounded-panel(click-out='hidePanel()', ng-mouseenter='showPanel()', ng-controller='LoginCtrl')
+  p Login/Register
+  .visibility-toggle(ng-class='{active: visible, inactive: !visible}')
+    form(ng-submit='submitUserInformation()')
+      +input('email', 'user.username', 'Email address')
+      +input('password', 'user.password', 'Password')
+      .visibility-toggle(ng-class='{active: login, inactive: !login}')
+        input.btn-primary(type='submit', value='Login')
+        p.switch-text Not a member? <a ng-click='switchView()'>Register</a>
+      .visibility-toggle(ng-class='{active: !login, inactive: login}')
+        +input('password', 'confirm', 'Confirm Password')
+        input.btn-primary(type='submit', value='Register')
+        p.switch-text Already a member? <a ng-click='switchView()'>Log in</a>
+      p(style='color: red') {{ error }}

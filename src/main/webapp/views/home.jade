@@ -1,0 +1,33 @@
+#guild-info
+  div(ng-controller='RequestCtrl')
+    .rounded-panel#request-panel
+      h2 Guild Requests
+      form(ng-submit='addRequest()')
+        input(type='text', ng-model='newRequest.title', placeholder='Request Title')
+        input(type='text', ng-model='newRequest.requester', placeholder='Requester')
+        h3 Request Items
+        .batch-entry(ng-repeat='item in newRequest.items')
+          input(type='text', ng-model='item.name', placeholder='Item Name')
+          input(type='number', ng-model='item.amount', placeholder='Amount Needed')
+        input.btn-primary(type='button', ng-click='newRequest.items.push({})', value='+')
+        input.btn-primary(type='button', ng-click='newRequest.items.splice(newRequest.items.length - 1, 1)', value='-')
+        input.btn-primary(type='submit', value='Add Request')
+      #guild-requests
+        h2 Active Requests
+        div(ng-repeat='request in requests')
+          request(request='request', contribute='contribute(request, item)')
+  .rounded-panel(ng-controller='GoldCtrl')
+    form(ng-submit='setFunds()')
+      p {{guild.gold}}g {{guild.silver}}s {{guild.copper}}c
+      input.small-box(type='number', ng-model='guild.gold', placeholder='Gold')
+      span g
+      input.small-box(type='number', ng-model='guild.silver', placeholder='Silver')
+      span s
+      input.small-box(type='number', ng-model='guild.copper', placeholder='Copper')
+      span c
+      div
+        input.btn-primary(type='submit', value='Set')
+        p.text-fade(ng-class='{active: submitted, inactive: !submitted}').
+          Funds set
+  
+  

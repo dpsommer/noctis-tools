@@ -1,0 +1,17 @@
+#map-pane(ng-controller='MapCtrl')
+  #map-container
+    #map-sidebar.rounded-panel(click-out='hidePanel()', ng-mouseenter='showPanel()')
+      h3(style='text-align:center;padding-right:.5em;') Save/Load Map
+      .visibility-toggle(ng-class='{active: savePanelVisible, inactive: !savePanelVisible}')
+        p.
+          You can place markers by dragging the icons on the right onto the map.
+        h3#selection-heading Select a map:
+        select(ng-options='name for name in mapNames', ng-model='name')
+          option(value='') Map name
+        input.medium-box(type='text', ng-model='name', placeholder='Map name')
+        input.btn-primary(type='button', ng-click='saveMap()', value='Save map')
+        input.btn-primary(type='button', ng-click='loadMap()', value='Load map')
+    leaflet#aa-map(defaults='defaults', center='center', maxbounds='maxbounds', event-broadcast='events')
+    #map-markers
+      span.poi-type
+        img.drag(type='plant', src='https://s3.amazonaws.com/noctis-tools-assets/img/map/icons/plant-marker.png', alt='Plant Marker')

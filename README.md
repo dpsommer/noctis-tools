@@ -5,7 +5,7 @@ Git repo for deployment to Heroku, contains a basic website built to house tools
 
 Built on a mongodb, Java/SpringMVC, Angularjs stack with .jade templating.
 
-Deployment to Heroku:
+<h3>Deployment to Heroku</h3>
 
 Clone this repo:
 <code>git clone https://github.com/dpsommer/noctis-tools</code>
@@ -20,8 +20,13 @@ You'll probably need to create an ssh key, which you can do from git-bash with <
 
 You can either create your own heroku app to use as a testing environment and add it as a branch to be merged, or request permission to push directly to the main heroku app.
 
-In your cloned directory, you can create a new remote for the main heroku app with 
+In your cloned directory, you can create a new remote for the main heroku app with<br/>
 <code>git remote add heroku git@heroku.com:noctis-tools.git</code>
 
 
 This project uses Amazon s3 for static content, please reference any large content files from there: <a>https://s3.amazonaws.com/noctis-tools-assets/</a>
+
+The Heroku toolbar comes with the foreman Ruby gem, which allows you to deploy a test version of the site to localhost:5000 using the .pf-local Procfile with<br/>
+<code>foreman start -f .pf-local</code>
+
+Note that .pf-local is specifically for Windows, for Linux, just run <code>foreman start</code> to use the default Procfile.

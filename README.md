@@ -26,7 +26,6 @@ In your cloned directory, you can create a new remote for the main heroku app wi
 
 This project uses Amazon s3 for static content, please reference any large content files from there: <a>https://s3.amazonaws.com/noctis-tools-assets/</a>
 
-The Heroku toolbar comes with the foreman Ruby gem, which allows you to deploy a test version of the site to localhost:5000 using the .pf-local Procfile with<br/>
-<code>foreman start -f .pf-local</code>
+The Heroku toolbar comes with the foreman Ruby gem, which allows you to deploy a test version of the site to localhost:5000 using the .pf-local Procfile with <code>foreman start -f .pf-local</code>
 
 Note that .pf-local is specifically for Windows, for Linux, just run <code>foreman start</code> to use the default Procfile.
